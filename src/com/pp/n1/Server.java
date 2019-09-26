@@ -51,7 +51,7 @@ public class Server {
 				System.out.println(str);
 				
 				
-				System.out.println("서버로 전송할 메시지 입력");
+				System.out.println("클라이언트로 전송할 메시지 입력");
 				str = ssc.next();
 				
 				if(str.toUpperCase().equals("Q")) {
@@ -63,7 +63,7 @@ public class Server {
 				bw = new BufferedWriter(ow);
 				bw.write(str+"\r\n");
 				bw.flush();
-				System.out.println("서버로 전송 완료");
+				System.out.println("클라이언트로 전송 완료");
 			}
 			
 		} catch (IOException e) {
