@@ -23,10 +23,22 @@ public class Server4 {
 			ss = new ServerSocket(8282);
 			Socket sc = ss.accept();
 			
-			String u =network.receive(sc);
+			String u =network.receive(sc); //client한테 받은 id와 pw 구분자는(,)
+			
+			//String [] info = u.split(",");
+			//Member member = new Member();
+			//member.setId(info[0]);
+			//member.setPw(info[1]);
+			//
+			//member = ms.memberLogin(member);
+			//u = "0"; //login 실패
+			//if(member != null){
+			//	u = "1"; //로그인 성공
+			//	}
 			
 			String login = ms.memberLogin(member, u);
 			
+			//network.send(sc.u);
 			network.send(sc, login);
 			
 			

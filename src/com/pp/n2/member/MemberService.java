@@ -5,12 +5,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class MemberService {
+	
+	//private HashMap<String, Member> map;
 
 	//파일의 내용을 읽어서 파싱 작업
 	public ArrayList<Member> init() {
+		//this.map = new HashMap<String, Member>();
+		
 		File f = new File("C:\\Ppp\\test","member.txt");
 		ArrayList<Member> member = new ArrayList<Member>();
 		FileReader fr=null;
@@ -24,11 +29,11 @@ public class MemberService {
 				
 				StringTokenizer st =new StringTokenizer(str,",");
 				while(st.hasMoreTokens()){
-				Member user = new Member();
-				user.setId(st.nextToken());
-				user.setPw(st.nextToken());
-				member.add(user);
-				}
+					Member user = new Member();
+					user.setId(st.nextToken().trim());
+					user.setPw(st.nextToken().trim());
+					member.add(user);
+					}
 			}
 			
 			
@@ -45,7 +50,19 @@ public class MemberService {
 	
 	//id, pw를 매개변수로 받아서 로그인 유무를 검증
 	public String memberLogin(ArrayList<Member> member,String login) {
-//		ArrayList<Member> n = new ArrayList<Member>();
+		
+	//public Member memberLogin(Member member){	
+		//Member m = map.get(member.getId());
+		//if(m !=null){
+		//		if(m.getPw().equals(member.getPw())){
+		//			// 추가정보 대입
+		//		}else{
+		//			m =null;
+		//		}
+		//	}
+		//	return m;
+		//}
+		
 		StringTokenizer st = new StringTokenizer(login,",");
 		Member m = new Member();
 		m.setId(st.nextToken());

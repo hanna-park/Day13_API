@@ -28,9 +28,6 @@ public class Client4 {
 			System.out.println("비밀번호를 입력하세요.");
 			String str2 = scc.next();
 			
-			OutputStream os = sc.getOutputStream();
-			OutputStreamWriter ow =new OutputStreamWriter(os);
-			BufferedWriter bw = new BufferedWriter(ow);
 			
 			network.send(sc, str+","+str2);
 			System.out.println("로그인 시도중");
